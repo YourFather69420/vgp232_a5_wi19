@@ -26,6 +26,21 @@ namespace Assignment5
                 Console.WriteLine(pokemon.Name);
             }
 
+            PokemonBag pokemonBag = new PokemonBag();
+            int bulbasaur = pokedex.GetPokemonByName("Bulbasaur").Index;
+            int charizard = pokedex.GetPokemonByName("Charizard").Index;
+            int mew = pokedex.GetPokemonByName("Mew").Index;
+            int dragonite = pokedex.GetPokemonByName("Dragonite").Index;
+
+            pokemonBag.Pokemons.Add(bulbasaur);
+            pokemonBag.Pokemons.Add(charizard);
+            pokemonBag.Pokemons.Add(mew);
+            pokemonBag.Pokemons.Add(dragonite);
+
+            pokemonBag.Save("pokebag.xml");
+            pokemonBag.Pokemons.Clear();
+            pokemonBag.Load("pokebag.xml");
+
             // TODO: Add a pokemon bag with 2 bulbsaur, 1 charlizard, 1 mew and 1 dragonite
             // and save it out and load it back and list it out.
 
